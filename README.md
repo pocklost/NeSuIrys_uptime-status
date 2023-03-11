@@ -6,5 +6,5 @@
 
 ## 原項目
 
-原版: [uptime-status](https:////github.com/yb/uptime-status) \<br>
+原版: [uptime-status](https:////github.com/yb/uptime-status)
 美化版：[status](https://github.com/imsyy/status)
