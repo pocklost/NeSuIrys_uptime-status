@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<meta charset="utf-8">
+	<meta content="*" http-equiv="Access-Control-Allow-Origin">
+	<meta content="webkit" name="renderer">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta content="webkit" name="force-rendering">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="#424242" name="theme-color">
+	<link href="./favicon.ico" rel="apple-touch-icon">
+	<link href="./favicon.ico" rel="shortcut icon" type="image/x-icon">
+	
+	<title>網站狀態</title>
+	<script src="./config.js"></script>
+	<script defer="defer" src="./main.79443d13.js"></script>
+	<link href="./main.b659aad2.css" rel="stylesheet">
+	  <style>
+  #countdown {
+  	position: fixed;
+  	bottom: 20px;
+  	left: 20px;
+  	padding: 10px;
+  	background-color: #f5f5f5;
+  	color: #333;
+  	font-size: 18px;
+  	border-radius: 5px;
+  	border: 1px solid #ccc;
+  }
+  
+  
+  @media (max-width: 768px) {
+#countdown {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: transparent;
+    color: #333;
+    font-size: 15px;
+    border-radius: 0;
+    border: none;
+	writing-mode: vertical-rl;
+}
+
+  }
+  
+	 .hidden-img {
+	   display: none;
+	 }
+      </style>
+</head>
+
+<body>
+	<div id="app"></div>
+	<script>
+	       if ("serviceWorker" in navigator) {
+	           window.addEventListener("load", function () {
+	               navigator.serviceWorker.register("./sw.js");
+	           });
+	       }
+	</script> 
+	
+	<!-- 計算總瀏覽次數 -->
+	<img alt="錯誤" class="hidden-img" src="https://www.f-counter.net/j/61/1678255843/"> 
+	<!-- 計算總瀏覽次數 -->
+
+    <!-- 60秒後自動重新整理頁面 -->
+	<script type="text/javascript">
+	var count = 60; // 設定倒數秒數為 60 秒
+	var timer = setInterval(function() {
+		count--;
+		document.getElementById('countdown').innerHTML = "⟳ " + count + "秒"; // 將倒數秒數顯示在指定的元素中
+		if (count === 0) {
+			clearInterval(timer); // 倒數結束，清除計時器
+			location.reload(); // 重新整理頁面
+		}
+		else if (count <= 10) {
+			document.getElementById('countdown').style.color = 'red'; // 將字體顏色改為紅色
+		}
+	}, 1000); // 每 1 秒執行一次
+	
+	document.getElementById('countdown').addEventListener('click', function() {
+		location.reload();
+	});
+	</script>
+  <div id="countdown">⟳ 60秒</div>
+	<!-- 60秒後自動重新整理頁面 -->
+	
+</body>
+</html>
